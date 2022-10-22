@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{% block content %}
+    <h1>Главная</h1>
+    <div>
+        <div class="order_list">
+        <p>Количество заказов в работе: {{ num_orders }}</p>
+        {% if order_list %}
+            {% for order in order_list %}
+                <div class="order">
+                    <h2>Название: {{ order_name }}</h2>
+                    <p>Время заказа:{{ date_joined }}</p>
+                    <p>Категория:{{ category }}</p>
+                    <img alt="" src="{{ order_img }}">
+                </div>
+            {% endfor %}
+        {% else %}
+            <h2>Заказов нет</h2>
+        {% endif %}
+    </div>
+    </div>
+{% endblock %}
